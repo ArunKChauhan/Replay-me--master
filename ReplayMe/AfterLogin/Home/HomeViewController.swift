@@ -59,10 +59,15 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
     override func viewDidLoad() {
         super.viewDidLoad()
         
-       
-        segmentedControl.append(title: "Following")
+     //   self.userProfileImg.sd_setImage(with: URL(string: appConstants.kBASE_URL+((userDetail.object(forKey: "imageUrl") as! String?)!)), placeholderImage: UIImage(named: "layer35"))
+
+        
+        
+      //  btnAddStory.setImage(UIImage(named: "layer35"), for: UIControl.State.normal)
+
+        segmentedControl.append(title: "FOLLOWING")
             .set(titleColor: #colorLiteral(red: 1, green: 0.07843137255, blue: 0.5803921569, alpha: 1), for: .selected)
-        segmentedControl.append(title: "Trending")
+        segmentedControl.append(title: "TRENDING")
             .set(titleColor: #colorLiteral(red: 1, green: 0.07843137255, blue: 0.5803921569, alpha: 1), for: .selected)
         
         segmentedControl.indicator.lineView.backgroundColor = #colorLiteral(red: 1, green: 0.07843137255, blue: 0.5803921569, alpha: 1)
@@ -367,12 +372,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             updateLikeDict["totallikes"] = totalLike as AnyObject
             newsFeedListArray[buttonRow] = updateLikeDict
             if let cell = newsFeedTblView.cellForRow(at: checkIndexPath) as? HomeNewFeedCell {
-                cell.totalReactCountLbl.text = "\(totalLike) reacted"
+             //   cell.totalReactCountLbl.text = "\(totalLike) reacted"
                 cell.likeBtn.setImage(UIImage(named: "heart_liked"), for: UIControl.State.normal)
                 // cell.likeBtn.image = UIImage(named: "heartOutlineCopy")
             }
             if let cell = newsFeedTblView.cellForRow(at: checkIndexPath) as? NewsFeedLandscapeCell {
-                cell.totalLikeLbl.text = "\(totalLike)"
+               // cell.totalLikeLbl.text = "\(totalLike)"
                 cell.buttonLike.setImage(UIImage(named: "heart_liked"), for: UIControl.State.normal)
                 // cell.likeBtn.image = UIImage(named: "heartOutlineCopy")
             }
@@ -385,12 +390,12 @@ class HomeViewController: UIViewController, UITableViewDelegate, UITableViewData
             updateLikeDict["totallikes"] = totalLike as AnyObject
             newsFeedListArray[buttonRow] = updateLikeDict
             if let cell = newsFeedTblView.cellForRow(at: checkIndexPath) as? HomeNewFeedCell {
-                cell.totalReactCountLbl.text = "\(totalLike) reacted"
+             //   cell.totalReactCountLbl.text = "\(totalLike) reacted"
                 cell.likeBtn.setImage(UIImage(named: "heart"), for: UIControl.State.normal)
                 //  cell.likeImage.image = UIImage(named: "heartOutline")
             }
             if let cell = newsFeedTblView.cellForRow(at: checkIndexPath) as? NewsFeedLandscapeCell {
-                cell.totalLikeLbl.text = "\(totalLike)"
+             //   cell.totalLikeLbl.text = "\(totalLike)"
                 cell.buttonLike.setImage(UIImage(named: "heart"), for: UIControl.State.normal)
                 // cell.likeBtn.image = UIImage(named: "heartOutlineCopy")
             }
@@ -551,7 +556,7 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         } else {
             cell.imgView.sd_setImage(with: URL(string: appConstants.kBASE_URL + userDetails[indexPath.row].imageUrl), placeholderImage: UIImage(named: "layer35"))
             cell.lblUserName.text = userDetails[indexPath.row].name
-            cell.imgView.borderColor = #colorLiteral(red: 1, green: 0.07843137255, blue: 0.5803921569, alpha: 1)
+            cell.imgView.borderColor = #colorLiteral(red: 0.5490196078, green: 0.3215686275, blue: 1, alpha: 1)
         }
         return cell
     }
@@ -650,7 +655,8 @@ extension HomeViewController {
                 
                 }
                 cell.descriptionLabel.text = ((newsfeedDict as AnyObject).object(forKey: "title") as! String?)!
-                cell.totalReactCountLbl.text = "\(((newsfeedDict as AnyObject).object(forKey: "totallikes") as! Int?)!) reacted"
+                //Arun 
+              //  cell.totalReactCountLbl.text = "\(((newsfeedDict as AnyObject).object(forKey: "totallikes") as! Int?)!) reacted"
                 if (((newsfeedDict as AnyObject).object(forKey: "likes") as! Bool?)!) == true {
                     cell.likeBtn.setImage(UIImage(named: "heart_liked"), for: UIControl.State.normal)
                 } else {

@@ -49,10 +49,11 @@ class MyProfileViewController: UIViewController,NVActivityIndicatorViewable,Coll
         super.viewDidLoad()
         imagePicker.delegate = self
         
-        ProfilesegmentedControl.append(title: "Recents")
+        ProfilesegmentedControl.append(title: "RECENT")
             .set(titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .selected)
-        ProfilesegmentedControl.append(title: "Favorite")
-        ProfilesegmentedControl.append(title: "Events")
+        ProfilesegmentedControl.append(title: "FAVORITES")
+            
+      //  ProfilesegmentedControl.append(title: "Events")
 
             .set(titleColor: #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1), for: .selected)
         
@@ -97,7 +98,7 @@ class MyProfileViewController: UIViewController,NVActivityIndicatorViewable,Coll
         userDetailListApi()
         let followingTapGesture = UITapGestureRecognizer(target: self, action: #selector(totalFollowingUserOnTap))
         followingLbl.isUserInteractionEnabled = true
-    followingLbl.addGestureRecognizer(followingTapGesture)
+        followingLbl.addGestureRecognizer(followingTapGesture)
         
         let totalFolowingTap = UITapGestureRecognizer(target: self, action: #selector(totalFollowingUserOnTap))
              totlaFollowingLbl.isUserInteractionEnabled = true
@@ -113,7 +114,7 @@ class MyProfileViewController: UIViewController,NVActivityIndicatorViewable,Coll
         
     }
     
-    @objc func totalFollower() {
+    @objc func totalFollowingUserOnTap() {
  DispatchQueue.main.async {
     let   loginUserDetail = UserDefaults.standard.value(forKey: "userDetailDict") as! NSDictionary;
     if self.totlaFollowingLbl.text != "0"{
@@ -127,7 +128,9 @@ class MyProfileViewController: UIViewController,NVActivityIndicatorViewable,Coll
           }
      }
     
-     @objc func totalFollowingUserOnTap() {
+    
+    
+     @objc func totalFollower() {
      
         DispatchQueue.main.async {
         let loginUserDetail = UserDefaults.standard.value(forKey: "userDetailDict") as! NSDictionary;
@@ -177,9 +180,9 @@ class MyProfileViewController: UIViewController,NVActivityIndicatorViewable,Coll
                     if let userDetail  = dict.object(forKey: "data") as? NSDictionary
                     {
                         
-                        
                           self.userNameLbl.text = (userDetail.object(forKey: "userName") as! String?)
                         self.userNickNameLbl.text = String(format: "%@ %@",(userDetail.object(forKey: "firstName") as! String?)!,(userDetail.object(forKey: "lastName") as! String?)!)
+                        
                         self.userEmail.text = (userDetail.object(forKey: "email") as! String?)
 
                         //Arun
@@ -407,7 +410,7 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 250
+        return 125
     }
     
     
@@ -418,8 +421,8 @@ extension MyProfileViewController: UITableViewDelegate, UITableViewDataSource {
             //  let categoryTitle = modelArr[indexPath.section].category
             cell.backgroundColor = .clear
             let subCategoryTitle = modelArr[indexPath.section].subcategory
-            cell.titileLbl.text = modelArr[indexPath.section].category
-            cell.totalVideoCount.text = "(\(subCategoryTitle) Videos)"
+          //  cell.titileLbl.text = modelArr[indexPath.section].category
+          //  cell.totalVideoCount.text = "(\(subCategoryTitle) Videos)"
             //"\(categoryTitle)(\(subCategoryTitle) Videos)"
             
             // Pass the data to colletionview inside the tableviewcell

@@ -15,4 +15,6 @@ struct CollectionViewCellModel {
     var videoUrl: String
     var videoScreenShotUrl: String
     var views: String
+
+    
 }
