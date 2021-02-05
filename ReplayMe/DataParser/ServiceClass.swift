@@ -57,6 +57,7 @@ class ServiceClassMethods: NSObject {
                         
                     }
                     else {
+                        
                         print("It may be json Error or network error")
                         
                         _ = ["status" : "FAILURE","message" : "It seems network is slow!","requestKey" : serviceString]
