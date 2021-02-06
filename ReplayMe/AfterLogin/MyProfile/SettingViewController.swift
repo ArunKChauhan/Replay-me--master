@@ -16,7 +16,9 @@ class SettingViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-
+    @IBAction func backBtnClicked(_ sender: Any) {
+        self.navigationController?.popViewController(animated: false)
+     }
     /*
     // MARK: - Navigation
 
