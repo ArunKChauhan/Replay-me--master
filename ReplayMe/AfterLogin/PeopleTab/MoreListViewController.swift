@@ -35,7 +35,9 @@ class MoreListViewController: UIViewController,NVActivityIndicatorViewable,UITab
         }else if checkSectionString == "People you may know"{
            apiStr = appConstants.kPeopleYouKnow
         }
+        
         navTitleLbl.text = checkSectionString
+        
         ListApi()
     }
     
