@@ -1,7 +1,6 @@
 //
 //  SettingViewController.swift
 //  ReplayMe
-//
 //  Created by Krishna on 19/05/20.
 //  Copyright © 2020 Core Techies. All rights reserved.
 //
@@ -15,6 +14,7 @@ class SettingViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
+    
     
     @IBAction func backBtnClicked(_ sender: Any) {
         self.navigationController?.popViewController(animated: false)

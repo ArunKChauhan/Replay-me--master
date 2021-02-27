@@ -6662,7 +6662,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BFl-ob-s08" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4748" y="-1692"/>
+            <point key="canvasLocation" x="4734" y="-1655"/>
         </scene>
         <!--Post News View Controller-->
         <scene sceneID="ZJL-Hw-2UC">
@@ -7735,7 +7735,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kuq-dt-kZJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5488.125" y="-1692.2535211267607"/>
+            <point key="canvasLocation" x="5443" y="-1648"/>
         </scene>
         <!--My Profile View Controller-->
         <scene sceneID="lpv-H1-QXe">
